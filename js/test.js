@@ -167,29 +167,194 @@ city - місто, рядок "Kingston".
 // const keys = Object.keys(apartment); // ["descr", "rating", "price"]
 // const values = Object.values(apartment); // ["Spacious apartment in the city center", 4, 2153]
 
-
 /*******************************************************************************************************************************************
- * Функція countTotalSalary(salaries) приймає об'єкт зарплат (salaries) в якості параметра. 
- * Кожна властивість об'єкта salaries — це ключ, що містить ім'я співробітника, та значення - його відповідна зарплатня. 
+ * Функція countTotalSalary(salaries) приймає об'єкт зарплат (salaries) в якості параметра.
+ * Кожна властивість об'єкта salaries — це ключ, що містить ім'я співробітника, та значення - його відповідна зарплатня.
  * Доповни код функції countTotalSalary(salaries) так, щоб вона повертала загальну суму зарплат всіх співробітників.
- * @param {*} salaries 
- * @returns 
+ * @param {*} salaries
+ * @returns
  */
-function countTotalSalary(salaries) {
-  let totalSalary = 0;
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   // version 1
+//   const allSal = Object.values(salaries);
+//   for (const el of allSal) {
+//     totalSalary += el;
+//   }
 
-  // version 1
-  const allSal = Object.values(salaries);
-  for (const el of allSal) {
-    totalSalary += el;
-  }
+//   // // version 2
+//   // for (const key in salaries) {
+//   //   totalSalary = totalSalary + salaries[key]
+//   // }
 
-  // // version 2
-  // for (const key in salaries) {
-  //   totalSalary = totalSalary + salaries[key]
-  // }
+//   return totalSalary;
+// }
+// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
 
-  return totalSalary;
-}
+/***********************************************************************************************************************************************
+ * Масив colors містить колекцію кольорів.
+ * Кожен колір представлений об'єктом і має властивості hex і rgb з відповідними для цього формату і кольору значеннями.
+ * Перебери масив об'єктів colors, використовуючи цикл for...of. Додай у масив hexColors значення властивостей hex,
+ * а в масив rgbColors - значення властивостей rgb з усіх об'єктів масиву colors.
+ */
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+// const hexColors = [];
+// const rgbColors = [];
+// for (const color of colors) {
+//   hexColors.push(color.hex);
+//   rgbColors.push(color.rgb);
+// }
+// console.log(hexColors);
+// console.log(rgbColors);
 
-console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+/***********************************************************************************************************************************
+ * Функція getProductPrice(productName) приймає один параметр productName - назва продукту.
+ * Функція містить масив об'єктів products з такими властивостями, як name — ім'я товару, price — ціна і quantity — кількість.
+ * Доповни код функції так, щоб вона шукала об'єкт продукту з певним ім'ям (властивість name) в масиві products і повертала його ціну (властивість price).
+ * Якщо продукт з такою назвою не знайдений, функція повинна повертати null.
+ */
+// function getProductPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   for (const product of products) {
+//     if (productName === product.name) {
+//       return product.price;
+//     }
+//   }
+//   return null;
+// }
+// console.log(getProductPrice("Scanner"));
+
+/************************************************************************************************************************
+ * Напиши функцію getAllPropValues(propName), яка приймає один параметр propName - ім'я (ключ) властивості.
+ * Функція повинна повернути масив усіх значень властивості з таким ім'ям з кожного об'єкта в масиві products.
+ * Якщо в об'єктах відсутні властивості з таким ім'ям, функція повинна повернути порожній масив.
+ */
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+//   const allValuesofProp = []
+//   for (const product of products) {
+//     if (product[propName]) {
+//       allValuesofProp.push(product[propName])
+//     };
+//   }
+//   return allValuesofProp
+// }
+// console.log(getAllPropValues("price"));
+
+/***************************************************************************************************************************
+ * Функція calculateTotalPrice(productName) приймає один параметр productName- назва товару.
+ * Функція містить масив об'єктів products з такими властивостями, як name — ім'я товару, price — ціна і quantity — кількість.
+ * Доповни код функції так, щоб вона повертала загальну вартість (ціна * кількість) товару з таким ім'ям з масиву products.
+ * Якщо продукту з такою назвою немає, то функція повинна повертати рядок "Product <productName> not found!" ,
+ * де <productName> — це ім'я товару.
+ */
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+//   let totalPricePerProduct = 0;
+//   for (const product of products) {
+//     if (productName === product.name) {
+//       totalPricePerProduct = product.price * product.quantity;
+//       return totalPricePerProduct;
+//     }
+//   }
+//   return `Product ${productName} not found!`;
+// }
+// console.log(calculateTotalPrice("Droid"));
+
+/**
+ * Об'єкт atTheOldToad має наступні властивості:
+potions — масив об'єктів зілль
+getPotions() — метод, який повертає значення властивості potions
+updatePotionName() — метод, який приймає два параметра рядків oldName і newName
+Доповни метод updatePotionName(oldName, newName) таким чином, щоб він оновлював назву зілля з oldName на 
+newName в масиві зілля у властивості potions.
+ */
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   updatePotionName(oldName, newName) {
+//      for (const potion of this.potions) {
+//         if (oldName === potion.name) {
+//           potion.name = newName
+//        }
+//     }
+//   },
+// };
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility");
+// console.log(atTheOldToad.potions);
+
+
+/**
+ * Функція getExtremeScores(scores) приймає масив оцінок (чисел) у параметрі scores.
+
+Доповни код функції так, щоб вона повертала об'єкт із двома властивостями:
+
+Властивість best має містити найбільше число з масиву scores
+Властивість worst має містити найменше число з масиву scores.
+Використовуй оператор (...spread) і методи Math.max() і Math.min().
+ * @param {Array} scores 
+ * @returns {Object} myScores
+ */
+// function getExtremeScores(scores) {
+//    const myScores = {
+//       best: 0,
+//       worst: 0
+//    }
+
+//    const maxResult = Math.max(...scores)
+//    const minResult = Math.min(...scores)
+
+//    myScores.best = maxResult;
+//    myScores.worst = minResult;
+
+//    return myScores
+// }
+// console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));
+
+
+
+/**************************************************************************************************************************
+ * У змінних firstGroupScores, secondGroupScores і thirdGroupScores зберігаються результати тестування окремих груп. 
+ * Використовуючи розпилення, доповни код таким чином, щоб:
+ * У змінній allScores зберігався масив всіх результатів від першої до третьої групи включно.
+ * У змінній bestScore - найвищий загальний бал.
+ * У змінній worstScore - найнижчий загальний бал.
+ */
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+
+// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// console.log(allScores);
+// console.log(bestScore);
+// console.log(worstScore);
